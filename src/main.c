@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: amaragre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/11 16:53:00 by kmurray           #+#    #+#             */
-/*   Updated: 2017/05/30 21:59:24 by kmurray          ###   ########.fr       */
+/*   Created: 2020/05/11 16:53:00 by amaragre          #+#    #+#             */
+/*   Updated: 2020/06/09 21:59:24 by amaragre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-static void	get_map_size(t_fill *game, char *line)
+static void	parse_map_size(t_fill *game, char *line)
 {
 	int		i;
 
@@ -47,7 +47,7 @@ int			main(int ac, char **av)
 	if (get_next_line(0, &line) > 0)
 		game->player = line[10] == '1' ? 'o' : 'x';
 	ft_strdel(&line);
-	get_map_size(game, line);
+	parse_map_size(game, line);
 	while (get_next_line(0, &line) > 0)
 	{
 		if (parse_input(game, piece, line))

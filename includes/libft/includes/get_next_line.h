@@ -3,28 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tclarita <tclarita@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/28 13:08:00 by kmurray           #+#    #+#             */
-/*   Updated: 2017/05/08 17:32:15 by kmurray          ###   ########.fr       */
+/*   Created: 2019/05/27 22:46:23 by vinograd          #+#    #+#             */
+/*   Updated: 2019/11/05 13:24:26 by tclarita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 3
-# define MAX_FD 1025
-# define MAX_BUF 10000000
-# define LINE '\n'
+# define BUFF_SIZE 1
+# include "libft.h"
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-typedef struct			s_fd_list
+typedef struct		s_arr
 {
-	int					fd;
-	char				*str;
-	struct s_fd_list	*next;
-}						t_fd_list;
+	int				fd;
+	char			*rest;
+	struct s_arr	*next;
+}					t_arr;
 
-int						get_next_line(const int fd, char **line);
+t_arr				*ft_newlist(const int fd);
+char				*checkrest(char **p_n, char *rest);
+int					get_line(const int fd, char **line, char *rest);
+int					get_next_line(const int fd, char **line);
 
 #endif

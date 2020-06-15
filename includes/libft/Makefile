@@ -3,8 +3,8 @@ NAME= libft.a
 CC= gcc
 CFLAGS+= -Wall -Werror -Wextra
 
-SRCS_PATH= ./libft_src/
-PF_PATH= ./pf_src/
+SRCS_PATH= ./libft_sources/
+PF_PATH= ./printf_sources/
 
 SRC_NAME+= ft_itoa.c ft_memdup.c ft_strcmp.c ft_strncpy.c ft_lltoa_base.c\
 		   ft_memmove.c ft_strcpy.c ft_strnequ.c ft_atoi.c ft_lstadd.c ft_memset.c\
@@ -20,18 +20,15 @@ SRC_NAME+= ft_itoa.c ft_memdup.c ft_strcmp.c ft_strncpy.c ft_lltoa_base.c\
 		   ft_strmapi.c ft_wordlen.c ft_isprime.c ft_memcpy.c ft_strchr.c\
 		   ft_strncat.c ft_isprint.c ft_memdel.c ft_strclr.c ft_strncmp.c\
 		   ft_power_of.c ft_max.c ft_min.c ft_iswhitespace.c ft_strmove.c\
-		   ft_strlchr.c ft_freezero.c ft_lstpop.c ft_lstcat.c ft_putlchar.c\
-		   ft_putlstr.c ft_putlnbr.c ft_putlnbr_fd.c ft_abs.c\
+		   ft_strlchr.c ft_freezero.c ft_lstpop.c ft_lstcat.c ft_abs.c\
 		   ft_maxtoa_base.c ft_umaxtoa_base.c ft_countu_base.c ft_lstsort.c\
 		   ft_toupperstr.c ft_tolowerstr.c ft_capitalize_each.c\
-		   get_next_line.c ft_exit_malloc_error.c
+		   get_next_line.c ft_exit_malloc_error.c ft_countwords.c\
+		   ft_int_len.c ft_sqrt.c ft_strrev.c ft_swapstr.c\
 
-PF_SRC_NAME= ft_printf.c char_at_x.c parse_flags.c\
-				parse_fw.c parse_precision.c parse_specifier.c print_mods.c\
-				parse_length.c validate_mods.c validate_flags.c\
-				get_udecimal.c make_decimalstr.c make_stringstr.c make_pointerstr.c\
-				make_octalstr.c make_hexstr.c\
-				add_precision.c add_padding.c
+
+PF_SRC_NAME= tools.c tools_2.c tools_3.c ft_printf.c flags.c c.c int.c o.c p.c s.c \
+checks.c u.c x.c xx.c tools_4.c tools_5.c int_2.c f.c f_2.c
 
 SRC = $(addprefix $(SRCS_PATH),$(SRC_NAME))
 

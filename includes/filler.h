@@ -14,6 +14,7 @@
 # define FILLER_H
 
 # include "libft.h"
+# include <stdint.h>
 
 # define COORDS ft_tolower(game->map[YPOS + j][XPOS + i])
 # define MAP game->map
@@ -81,11 +82,6 @@ int					**build_heat_map(t_fill *game);
 void				get_priorities(t_fill *game);
 void				clean_structs(t_fill *game, t_piece *piece, t_place *place);
 void				choke(t_fill *game, int **heat_map);
-
-/*
-**	debugging code
-*/
-
 void				print_heat_map(t_fill *game, int **heat_map);
 void				print_map(t_fill *game);
 
